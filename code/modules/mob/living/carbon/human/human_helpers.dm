@@ -288,3 +288,32 @@
 		return HUMAN_HEIGHT_DWARF
 
 	return mob_height
+
+/**
+ * Gets a specified number of the human's recently-spoken lines.
+ *
+ * Currently used by changelings and paradox clones so they can mimic someone's speech better.
+ *
+ * Returns a list of recent speech lines.
+ */
+/mob/living/carbon/human/proc/get_recent_speech(num_lines)
+	var/list/recent_speech = list()
+	var/list/say_log = list()
+	var/log_source = src.logging
+	for(var/log_type in log_source)
+		var/nlog_type = text2num(log_type)
+		if(nlog_type & LOG_SAY)
+			var/list/reversed = log_source[log_type]
+			if(islist(reversed))
+				say_log = reverse_range(reversed.Copy())
+				break
+
+	if(LAZYLEN(say_log) > num_lines)
+		recent_speech = say_log.Copy(say_log.len-num_lines+1,0) //0 so len-num_lines+1 to end of list
+	else
+		for(var/spoken_memory in say_log)
+			if(recent_speech.len >= num_lines)
+				break
+			recent_speech[spoken_memory] = splittext(say_log[spoken_memory], "\"", 1, 0, TRUE)[3]
+
+	return recent_speech

@@ -1,3 +1,6 @@
+/// The number of recent spoken lines to gain on absorbing a mob
+#define PARADOX_CLONE_RECENT_SPEECH 8
+
 /datum/antagonist/paradox_clone
 	name = "\improper Paradox Clone"
 	roundend_category = "Paradox Clone"
@@ -72,6 +75,18 @@
 	if(sensor_clothes)
 		sensor_clothes.sensor_mode = SENSOR_OFF
 		clone_human.update_suit_sensors()
+
+	//Some of target's recent speech, so the changeling can attempt to imitate them better.
+	var/list/recent_speech = original_human.get_recent_speech(PARADOX_CLONE_RECENT_SPEECH)
+
+	if(recent_speech.len)
+		antag_memory += "<B>You feel a resonance with your other self... You recall some of the things [original_human.p_they()] said!</B><br>"
+		to_chat(owner, span_boldnotice("You feel a resonance with your other self... You recall some of the things [original_human.p_they()] said!"))
+		for(var/spoken_memory in recent_speech)
+			antag_memory += "\"[recent_speech[spoken_memory]]\"<br>"
+			to_chat(owner, span_notice("\"[recent_speech[spoken_memory]]\""))
+		antag_memory += "<B>Your memories of your other self grow fuzzy.</B><br>"
+		to_chat(owner, span_boldnotice("Your memories of your other self grow fuzzy."))
 
 /datum/antagonist/paradox_clone/roundend_report_header()
 	return "<span class='header'>A paradox clone appeared on the station!</span><br>"
