@@ -860,6 +860,15 @@
 	suffix = "northstar"
 	name = "cargo ferry (North Star)"
 
+/datum/map_template/shuttle/arrival/engira
+	suffix = "engira"
+	name = "arrival shuttle (Engira)"
+
+/datum/map_template/shuttle/cargo/engira
+	suffix = "engira"
+	name = "cargo ferry (Engira)"
+
+
 // Custom ERT shuttles
 /datum/map_template/shuttle/ert/bounty
 	suffix = "bounty"

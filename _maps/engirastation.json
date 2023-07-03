@@ -1,0 +1,41 @@
+{
+	"version": 1,
+	"map_name": "Engira Station",
+	"map_path": "map_files/Engirastation",
+	"map_file": "engirastationwip1.dmm",
+	"planetary": 1,
+	"shuttles": {
+		"cargo": "cargo_engira",
+		"ferry": "ferry_fancy",
+		"whiteship": "whiteship_box",
+		"emergency": "emergency_box"
+	},
+	"traits": [
+		{
+			"Up": 1,
+			"Baseturf": "/turf/open/openspace/icemoon/keep_below",
+			"Gravity": true,
+			"Linkage": "null"
+		},
+		{
+			"Up": 1,
+			"Down": -1,
+			"Baseturf": "/turf/open/openspace/icemoon/keep_below",
+			"Gravity": true,
+			"Linkage": "null"
+		},
+		{
+			"Up": 1,
+			"Down": -1,
+			"Baseturf": "/turf/open/openspace/icemoon/keep_below",
+			"Gravity": true,
+			"Linkage": "null"
+		},
+		{
+			"Down": -1,
+			"Baseturf": "/turf/open/openspace/icemoon/keep_below",
+			"Gravity": true,
+			"Linkage": "null"
+		}
+	]
+}
