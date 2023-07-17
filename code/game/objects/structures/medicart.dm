@@ -21,7 +21,7 @@
 
 /obj/structure/medicart
 	name = "mobile medicart"
-	desc = "A squeaky-wheeled metal cart chock-full of medical tools. You notice a joint that allows for the wheels and bottom storage compartment to be folded up."
+	desc = "A Deforest brand medical cart. It is a folding model, meaning the wheels on the bottom can be retracted and the body used as a tray."
 	icon = 'icons/obj/medicart.dmi'
 	icon_state = "medicart"
 
