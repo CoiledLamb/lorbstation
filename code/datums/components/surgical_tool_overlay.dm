@@ -3,6 +3,7 @@
 #define TIER_NORMAL 0
 
 /datum/component/surgical_tool_overlay
+	var/tray_toggled = FALSE
 
 /datum/component/surgical_tool_overlay/Initialize()
 	.=..()
@@ -12,6 +13,10 @@
 /datum/component/surgical_tool_overlay/RegisterWithParent()
 	.=..()
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(update_overlays))
+	RegisterSignal(parent, COMSIG_SURGERY_TRAY_TOGGLE, PROC_REF(toggle_tray_state))
+
+/datum/component/surgical_tool_overlay/proc/toggle_tray_state(atom/my_bag, new_state)
+	tray_toggled = new_state
 
 /// Check contents for the overlays
 /datum/component/surgical_tool_overlay/proc/update_overlays(atom/my_bag, list/overlays)
@@ -122,7 +127,7 @@
 			continue
 
 	if (has_bonesetter)
-		overlays |= "bonesetter"
+		overlays |= tray_toggled ? "bonesetter_out" : "bonesetter"
 	if (has_drapes)
 		overlays |= "drapes"
 	if (has_filter)
@@ -130,9 +135,9 @@
 	if (has_razor)
 		overlays |= "razor"
 	if (has_tape)
-		overlays |= "tape"
+		overlays |= tray_toggled ? "tape_out" : "tape"
 	if (has_gel)
-		overlays |= "gel"
+		overlays |= tray_toggled ? "gel_out" : "gel"
 	switch(scalpel_overlay)
 		if(TIER_ALIEN)
 			overlays += "scalpel_alien"
