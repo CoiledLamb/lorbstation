@@ -94,7 +94,7 @@
 			if (istype(tool, /obj/item/hemostat/alien))
 				hemostat_overlay = TIER_ALIEN
 				continue
-			if (hemostat_overlay == TIER_NORMAL)
+			if (hemostat_overlay == TIER_CRUEL)
 				continue
 			if (istype(tool, /obj/item/hemostat/cruel))
 				hemostat_overlay = TIER_CRUEL
@@ -189,7 +189,7 @@
 			overlays += "retractor_alien"
 		if(TIER_ADVANCED)
 			overlays += "retractor_advanced"
-		if(TIER_ADVANCED)
+		if(TIER_CRUEL)
 			overlays += "retractor_cruel"
 		if(TIER_NORMAL)
 			overlays += "retractor_normal"
