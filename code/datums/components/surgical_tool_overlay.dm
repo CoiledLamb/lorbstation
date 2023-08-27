@@ -1,7 +1,7 @@
 #define TIER_ALIEN 3
 #define TIER_ADVANCED 2
-#define TIER_NORMAL 1
-#define TIER_CRUEL 0
+#define TIER_CRUEL 1
+#define TIER_NORMAL 0
 
 /datum/component/surgical_tool_overlay
 	var/tray_toggled = FALSE
@@ -50,7 +50,7 @@
 			has_razor = TRUE
 			continue
 
-		if (istype(tool, /obj/item/scalpel/cruel))
+		if (istype(tool, /obj/item/scalpel))
 			if (scalpel_overlay == TIER_ALIEN)
 				continue
 			if (istype(tool, /obj/item/scalpel/alien))
@@ -61,15 +61,15 @@
 			if (istype(tool, /obj/item/scalpel/advanced))
 				scalpel_overlay = TIER_ADVANCED
 				continue
-			if (scalpel_overlay == TIER_NORMAL)
+			if (scalpel_overlay == TIER_CRUEL)
 				continue
-			if (istype(tool, /obj/item/scalpel))
-				scalpel_overlay = TIER_NORMAL
+			if (istype(tool, /obj/item/scalpel/cruel))
+				scalpel_overlay = TIER_CRUEL
 				continue
-			scalpel_overlay = TIER_CRUEL
+			scalpel_overlay = TIER_NORMAL
 			continue
 
-		if (istype(tool, /obj/item/cautery/cruel))
+		if (istype(tool, /obj/item/cautery))
 			if (cautery_overlay == TIER_ALIEN)
 				continue
 			if (istype(tool, /obj/item/cautery/alien))
@@ -80,15 +80,15 @@
 			if (istype(tool, /obj/item/cautery/advanced))
 				cautery_overlay = TIER_ADVANCED
 				continue
-			if (cautery_overlay == TIER_NORMAL)
+			if (cautery_overlay == TIER_CRUEL)
 				continue
-			if (istype(tool, /obj/item/cautery))
-				cautery_overlay = TIER_NORMAL
+			if (istype(tool, /obj/item/cautery/cruel))
+				cautery_overlay = TIER_CRUEL
 				continue
-			cautery_overlay = TIER_CRUEL
+			cautery_overlay = TIER_NORMAL
 			continue
 
-		if (istype(tool, /obj/item/hemostat/cruel))
+		if (istype(tool, /obj/item/hemostat))
 			if (hemostat_overlay == TIER_ALIEN)
 				continue
 			if (istype(tool, /obj/item/hemostat/alien))
@@ -96,10 +96,10 @@
 				continue
 			if (hemostat_overlay == TIER_NORMAL)
 				continue
-			if (istype(tool, /obj/item/hemostat))
-				hemostat_overlay = TIER_NORMAL
+			if (istype(tool, /obj/item/hemostat/cruel))
+				hemostat_overlay = TIER_CRUEL
 				continue
-			hemostat_overlay = TIER_CRUEL
+			hemostat_overlay = TIER_NORMAL
 			continue
 
 		if (istype(tool, /obj/item/retractor))
@@ -113,12 +113,12 @@
 			if (istype(tool, /obj/item/retractor/advanced))
 				retractor_overlay = TIER_ADVANCED
 				continue
-			if (retractor_overlay == TIER_NORMAL)
+			if (retractor_overlay == TIER_CRUEL)
 				continue
-			if (istype(tool, /obj/item/retractor))
-				retractor_overlay = TIER_NORMAL
+			if (istype(tool, /obj/item/retractor/cruel))
+				retractor_overlay = TIER_CRUEL
 				continue
-			retractor_overlay = TIER_CRUEL
+			retractor_overlay = TIER_NORMAL
 			continue
 
 		if (istype(tool, /obj/item/surgicaldrill))

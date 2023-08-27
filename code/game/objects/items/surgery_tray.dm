@@ -25,6 +25,7 @@
 	icon = 'icons/obj/medicart.dmi'
 	icon_state = "tray"
 	w_class = WEIGHT_CLASS_BULKY
+	item_flags = SLOWS_WHILE_IN_HAND
 	var/tray_mode = TRUE
 
 /obj/item/surgery_tray/deployed
@@ -70,7 +71,7 @@
 	if(tray_mode)
 		interaction_flags_item |= INTERACT_ITEM_ATTACK_HAND_PICKUP
 		pass_flags |= PASSTABLE
-		desc = "The wheels and bottom storage of this medicart have been stowed away, leaving a smaller, but still bulky tray in it's place."
+		desc = "The wheels and bottom storage of this medical cart have been stowed away, leaving a smaller, but still bulky tray in it's place."
 		icon_state = "tray"
 	else
 		interaction_flags_item &= ~INTERACT_ITEM_ATTACK_HAND_PICKUP
