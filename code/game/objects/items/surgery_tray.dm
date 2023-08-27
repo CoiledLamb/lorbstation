@@ -26,9 +26,26 @@
 	icon_state = "tray"
 	w_class = WEIGHT_CLASS_BULKY
 	item_flags = SLOWS_WHILE_IN_HAND
+	var/slowdown = 1
 	var/tray_mode = TRUE
 
 /obj/item/surgery_tray/deployed
+	icon_state = "medicart"
+	tray_mode = FALSE
+
+/obj/item/surgery_tray/morgue
+	name = "autopsy tray"
+	desc = "A Deforest brand medical cart, made for use in morgues. It is a folding model, meaning the wheels on the bottom can be retracted and the body used as a tray."
+	icon = 'icons/obj/medicart.dmi'
+	icon_state = "tray"
+	w_class = WEIGHT_CLASS_BULKY
+	item_flags = SLOWS_WHILE_IN_HAND
+	var/slowdown = 1
+	var/tray_mode = TRUE
+
+/obj/item/surgery_tray/morgue/deployed
+	name = "autopsy tray"
+	desc = "A Deforest brand medical cart, made for use in morgues. It is a folding model, meaning the wheels on the bottom can be retracted and the body used as a tray."
 	icon_state = "medicart"
 	tray_mode = FALSE
 
@@ -50,6 +67,24 @@
 		/obj/item/circular_saw = 1,
 		/obj/item/surgicaldrill = 1,
 		/obj/item/cautery = 1,
+		/obj/item/bonesetter = 1,
+		/obj/item/surgical_drapes = 1,
+		/obj/item/clothing/mask/surgical = 1,
+		/obj/item/razor = 1,
+		/obj/item/blood_filter = 1,
+		/obj/item/stack/sticky_tape/surgical = 1,
+		/obj/item/stack/medical/bone_gel = 1,
+	)
+	generate_items_inside(items_inside, src)
+
+/obj/item/surgery_tray/morgue/proc/PopulateContents()
+	var/static/list/items_inside = list(
+		/obj/item/scalpel/cruel = 1,
+		/obj/item/hemostat/cruel = 1,
+		/obj/item/retractor/cruel = 1,
+		/obj/item/circular_saw = 1,
+		/obj/item/surgicaldrill = 1,
+		/obj/item/cautery/cruel = 1,
 		/obj/item/bonesetter = 1,
 		/obj/item/surgical_drapes = 1,
 		/obj/item/clothing/mask/surgical = 1,
