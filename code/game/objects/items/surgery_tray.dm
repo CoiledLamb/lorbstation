@@ -77,6 +77,8 @@
 		pass_flags &= ~PASSTABLE
 		desc = "A Deforest brand medical cart. It is a folding model, meaning the wheels on the bottom can be retracted and the body used as a tray."
 		icon_state = "medicart"
+	SEND_SIGNAL(src, COMSIG_SURGERY_TRAY_TOGGLE, tray_mode)
+	update_appearance(UPDATE_OVERLAYS)
 
 /obj/item/surgery_tray/equipped(mob/user, slot, initial)
 	. = ..()
