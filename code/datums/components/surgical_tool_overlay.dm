@@ -164,6 +164,8 @@
 			overlays += "scalpel_alien"
 		if(TIER_ADVANCED)
 			overlays += "scalpel_advanced"
+		if(TIER_CRUEL)
+			overlays += "scalpel_cruel"
 		if(TIER_NORMAL)
 			overlays += "scalpel_normal"
 	switch(cautery_overlay)
@@ -171,11 +173,15 @@
 			overlays += "cautery_alien"
 		if(TIER_ADVANCED)
 			overlays += "cautery_advanced"
+		if(TIER_CRUEL)
+			overlays += "cautery_cruel"
 		if(TIER_NORMAL)
 			overlays += "cautery_normal"
 	switch(hemostat_overlay)
 		if(TIER_ALIEN)
 			overlays += "hemostat_alien"
+		if(TIER_ALIEN)
+			overlays += "hemostat_cruel"
 		if(TIER_NORMAL)
 			overlays += "hemostat_normal"
 	switch(retractor_overlay)
@@ -183,6 +189,8 @@
 			overlays += "retractor_alien"
 		if(TIER_ADVANCED)
 			overlays += "retractor_advanced"
+		if(TIER_ADVANCED)
+			overlays += "retractor_cruel"
 		if(TIER_NORMAL)
 			overlays += "retractor_normal"
 	switch(drill_overlay)
@@ -202,4 +210,5 @@
 
 #undef TIER_ALIEN
 #undef TIER_ADVANCED
+#undef TIER_CRUEL
 #undef TIER_NORMAL
