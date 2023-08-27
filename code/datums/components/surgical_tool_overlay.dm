@@ -180,7 +180,7 @@
 	switch(hemostat_overlay)
 		if(TIER_ALIEN)
 			overlays += "hemostat_alien"
-		if(TIER_ALIEN)
+		if(TIER_CRUEL)
 			overlays += "hemostat_cruel"
 		if(TIER_NORMAL)
 			overlays += "hemostat_normal"

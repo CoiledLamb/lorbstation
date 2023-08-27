@@ -26,7 +26,7 @@
 	icon_state = "tray"
 	w_class = WEIGHT_CLASS_BULKY
 	item_flags = SLOWS_WHILE_IN_HAND
-	var/slowdown = 1
+	slowdown = 1
 	var/tray_mode = TRUE
 
 /obj/item/surgery_tray/deployed
@@ -97,10 +97,6 @@
 	forceMove(placement_turf)
 
 /obj/item/surgery_tray/morgue
-	name = "autopsy tray"
-	desc = "A Deforest brand medical cart, made for use in morgues. It is a folding model, meaning the wheels on the bottom can be retracted and the body used as a tray."
-
-/obj/item/surgery_tray/morgue/deployed
 	name = "autopsy tray"
 	desc = "A Deforest brand medical cart, made for use in morgues. It is a folding model, meaning the wheels on the bottom can be retracted and the body used as a tray."
 
