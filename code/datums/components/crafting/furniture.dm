@@ -36,3 +36,14 @@
 		/obj/item/stack/sheet/mineral/silver = 2,
 	)
 	category = CAT_FURNITURE
+
+/datum/crafting_recipe/newspaper_rack
+	name = "Newspaper Rack"
+	reqs = list(
+		/obj/item/stack/sheet/mineral/wood = 1,
+		/obj/item/stack/rods = 2
+	)
+	result = /obj/structure/newspaper_rack
+	tool_behaviors = list(TOOL_SCREWDRIVER)
+	category = CAT_FURNITURE
+	time = 5 SECONDS
